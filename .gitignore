@@ -1,0 +1,27 @@
+# Python virtual environment and caches
+.venv/
+__pycache__/
+*.py[cod]
+
+# Frontend dependencies/build output
+frontend/node_modules/
+frontend/dist/
+
+# Local env files (keep examples)
+frontend/.env
+backend/.env
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
+# Optional logs
+*.log
+
+# Do not publish database backups
+backend/data/*backup*.db
+
+# Raw source workbook and local artifacts
+backend/data/*.xlsx
+=
+row\[CODE NO_clean\]

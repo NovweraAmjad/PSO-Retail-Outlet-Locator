@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: pso-locator-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: https://pso-locator-frontend.onrender.com
+      - key: CORS_ALLOW_CREDENTIALS
+        value: "false"
+
+  - type: static
+    name: pso-locator-frontend
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://pso-locator-api.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

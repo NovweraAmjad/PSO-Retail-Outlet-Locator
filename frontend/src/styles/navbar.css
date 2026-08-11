@@ -1,0 +1,109 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(1300px, 100%);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  border-radius: 0 0 32px 32px;
+  backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 87, 168, 0.14);
+  box-shadow: var(--shadow-soft);
+}
+
+html[data-theme="dark"] .topbar {
+  background: rgba(8, 18, 41, 0.94);
+  border-color: rgba(34, 197, 94, 0.16);
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: var(--pso-surface-strong);
+  padding: 10px;
+  box-shadow: var(--shadow-soft);
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.nav-links button,
+.lang-toggle,
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.95rem 1rem;
+  border: none;
+  background: var(--pso-surface);
+  color: var(--text-primary);
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-base), background var(--transition-base), box-shadow var(--transition-base), color var(--transition-base);
+}
+
+.nav-links button:hover,
+.lang-toggle:hover,
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 87, 168, 0.12);
+}
+
+html[data-theme="dark"] .nav-links button:hover,
+html[data-theme="dark"] .lang-toggle:hover,
+html[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(34, 197, 94, 0.14);
+}
+
+.nav-links button::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--pso-blue);
+  transition: width 220ms ease;
+}
+
+.nav-links button:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+}

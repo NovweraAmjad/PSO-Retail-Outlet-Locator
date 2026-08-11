@@ -1,0 +1,386 @@
+.landing-page {
+  width: min(1300px, 100%);
+  margin: 0 auto;
+  padding: 3.75rem 1.5rem 4rem;
+  display: grid;
+  gap: 2.5rem;
+  position: relative;
+}
+
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - 120px);
+  border-radius: 36px;
+  background: radial-gradient(circle at top left, rgba(0, 87, 168, 0.56), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(0, 166, 81, 0.34), transparent 26%),
+    linear-gradient(180deg, #003b6f, #0057a8);
+  color: var(--pso-white);
+  padding: 4rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 2rem;
+}
+
+html[data-theme="dark"] .hero-panel {
+  background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.16), transparent 24%),
+    linear-gradient(180deg, #041026, #07172c);
+  color: var(--pso-white);
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.0));
+  pointer-events: none;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero-copy .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.88rem;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 1.02;
+  max-width: 720px;
+}
+
+.hero-copy p {
+  margin: 0;
+  max-width: 620px;
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.primary-button,
+.secondary-button,
+.location-toggle {
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  border-radius: 999px;
+  border: none;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base), color var(--transition-base);
+  min-width: 160px;
+}
+
+.primary-button {
+  background: var(--pso-green);
+  color: var(--pso-white);
+  box-shadow: 0 20px 40px rgba(0, 166, 81, 0.24);
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 26px 50px rgba(0, 166, 81, 0.32);
+}
+
+.secondary-button,
+.location-toggle {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--pso-white);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.secondary-button:hover,
+.location-toggle:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.location-toggle.active {
+  background: rgba(0, 166, 81, 0.22);
+  color: var(--pso-white);
+}
+
+html[data-theme="dark"] .secondary-button,
+html[data-theme="dark"] .location-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(34, 197, 94, 0.18);
+  color: var(--pso-white);
+}
+
+html[data-theme="dark"] .secondary-button:hover,
+html[data-theme="dark"] .location-toggle:hover {
+  background: rgba(34, 197, 94, 0.16);
+}
+
+.hero-image {
+  position: relative;
+  min-height: 560px;
+  z-index: 2;
+}
+
+.hero-brand-visual {
+  position: absolute;
+  inset: 8% 56% 8% 1.5%;
+  pointer-events: none;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  padding-inline: clamp(0.35rem, 1.2vw, 0.9rem);
+  overflow: hidden;
+}
+
+.hero-brand-logo {
+  width: clamp(106px, 13.8vw, 162px);
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.14));
+  opacity: 0.34;
+  animation: heroLogoFloat 8.6s ease-in-out infinite;
+}
+
+.hero-brand-orbit {
+  position: absolute;
+  width: clamp(190px, 26vw, 300px);
+  height: clamp(190px, 26vw, 300px);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 0 48px rgba(93, 178, 255, 0.13);
+  animation: heroOrbitSpin 26s linear infinite;
+  opacity: 0.5;
+}
+
+.hero-brand-orbit::before,
+.hero-brand-orbit::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero-brand-orbit::before {
+  inset: 14%;
+  border: 1px dashed rgba(0, 166, 81, 0.38);
+  animation: heroOrbitSpinReverse 18s linear infinite;
+}
+
+.hero-brand-orbit::after {
+  inset: -9%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-brand-lines {
+  position: absolute;
+  inset: 12% 10%;
+  border-radius: 28px;
+  opacity: 0.18;
+  background:
+    linear-gradient(114deg, transparent 0%, rgba(255, 255, 255, 0.42) 28%, transparent 56%),
+    linear-gradient(78deg, transparent 8%, rgba(0, 166, 81, 0.34) 40%, transparent 72%),
+    linear-gradient(132deg, transparent 12%, rgba(93, 178, 255, 0.36) 46%, transparent 74%);
+  filter: blur(0.25px);
+  animation: heroLinesFlow 13s ease-in-out infinite;
+}
+
+.hero-brand-energy {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.28);
+  opacity: 0.55;
+}
+
+.hero-brand-energy-primary {
+  top: 24%;
+  left: 20%;
+  background: rgba(0, 166, 81, 0.95);
+  animation: heroPulseTrail 7.4s ease-in-out infinite;
+}
+
+.hero-brand-energy-secondary {
+  right: 20%;
+  bottom: 24%;
+  background: rgba(93, 178, 255, 0.9);
+  animation: heroPulseTrail 7.4s ease-in-out infinite 1.7s;
+}
+
+html[data-theme="dark"] .hero-brand-logo {
+  background: transparent;
+  box-shadow: none;
+  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.25));
+  opacity: 0.3;
+}
+
+html[data-theme="dark"] .hero-brand-orbit {
+  border-color: rgba(148, 163, 184, 0.36);
+  box-shadow: inset 0 0 48px rgba(34, 197, 94, 0.15);
+}
+
+html[data-theme="dark"] .hero-brand-orbit::before {
+  border-color: rgba(34, 197, 94, 0.44);
+}
+
+html[data-theme="dark"] .hero-brand-lines {
+  opacity: 0.3;
+}
+
+@keyframes heroLogoFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.012);
+  }
+}
+
+@keyframes heroOrbitSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes heroOrbitSpinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes heroLinesFlow {
+  0%,
+  100% {
+    transform: translate3d(-3%, 0, 0);
+  }
+  50% {
+    transform: translate3d(3%, 0, 0);
+  }
+}
+
+@keyframes heroPulseTrail {
+  0%,
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+  55% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 22px rgba(255, 255, 255, 0.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-brand-logo,
+  .hero-brand-orbit,
+  .hero-brand-orbit::before,
+  .hero-brand-lines,
+  .hero-brand-energy {
+    animation: none !important;
+  }
+}
+
+.hero-map-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 32px;
+  background: var(--pso-surface);
+  border: 1px solid rgba(0, 87, 168, 0.14);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+html[data-theme="dark"] .hero-map-card {
+  background: var(--pso-surface);
+  border-color: rgba(34, 197, 94, 0.18);
+}
+
+.hero-map-label {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.16);
+  padding: 0.85rem 1.1rem;
+  border-radius: 999px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+html[data-theme="dark"] .hero-map-label {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--pso-white);
+}
+
+.hero-map-points {
+  position: absolute;
+  left: 2rem;
+  bottom: 2.5rem;
+  display: flex;
+  gap: 0.9rem;
+}
+
+.hero-point {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  box-shadow: 0 0 26px rgba(255, 255, 255, 0.18);
+}
+
+.point-enabled { background: var(--pso-green); }
+.point-normal { background: #5DB2FF; }
+.point-disabled { background: #FF6E6E; }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.feature-card {
+  padding: 1.8rem;
+  border-radius: 24px;
+  background: var(--pso-surface-strong);
+  border: 1px solid rgba(0, 87, 168, 0.1);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-strong);
+}
+
+html[data-theme="dark"] .feature-card {
+  background: var(--pso-surface);
+  border-color: rgba(34, 197, 94, 0.18);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+}
