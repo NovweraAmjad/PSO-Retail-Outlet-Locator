@@ -136,6 +136,49 @@ html[data-theme="dark"] .feedback-panel {
   border-color: rgba(34, 197, 94, 0.18);
 }
 
+.feedback-page-shell {
+  max-width: 920px;
+  margin: 1rem auto 2rem;
+  padding: 0 1rem;
+}
+
+.feedback-hero {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+
+.feedback-hero-card {
+  background: linear-gradient(135deg, rgba(0, 87, 168, 0.1), rgba(34, 197, 94, 0.12));
+  border: 1px solid rgba(0, 87, 168, 0.16);
+  border-radius: 22px;
+  padding: 1.1rem 1.15rem;
+  max-width: 420px;
+}
+
+.feedback-hero-card h3 {
+  margin: 0 0 0.45rem;
+  color: var(--pso-blue);
+  font-size: 1rem;
+}
+
+.feedback-hero-card p,
+.feedback-hero-card li {
+  color: var(--text-secondary);
+  font-size: 0.94rem;
+}
+
+.feedback-hero-card ul {
+  margin: 0.65rem 0 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.feedback-form-card {
+  padding: 1.4rem;
+}
+
 .feedback-panel-header,
 .panel-header {
   display: flex;
@@ -144,9 +187,25 @@ html[data-theme="dark"] .feedback-panel {
   align-items: center;
 }
 
+.feedback-panel-header h3 {
+  margin: 0 0 0.2rem;
+  color: var(--text-primary);
+}
+
+.feedback-panel-header p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
 .feedback-fields {
   display: grid;
   gap: 1rem;
+}
+
+.feedback-field-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .feedback-row {
@@ -183,8 +242,31 @@ html[data-theme="dark"] .feedback-row textarea {
 }
 
 .feedback-row textarea {
-  min-height: 120px;
+  min-height: 132px;
   resize: vertical;
+}
+
+.feedback-note {
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px dashed rgba(0, 87, 168, 0.16);
+}
+
+html[data-theme="dark"] .feedback-note {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.feedback-note strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.feedback-note p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
 }
 
 .feedback-actions {
@@ -193,7 +275,7 @@ html[data-theme="dark"] .feedback-row textarea {
 }
 
 .feedback-status {
-  padding: 0.85rem 1rem;
+  padding: 0.9rem 1rem;
   border-radius: 16px;
   font-size: 0.95rem;
 }
@@ -208,6 +290,42 @@ html[data-theme="dark"] .feedback-row textarea {
   color: #b91c1c;
 }
 
+.feedback-success-card {
+  padding: 1rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(0, 87, 168, 0.08));
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.feedback-success-card h4 {
+  margin: 0 0 0.75rem;
+  color: var(--text-primary);
+}
+
+.feedback-summary-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.feedback-summary-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.feedback-summary-item strong {
+  color: var(--text-primary);
+  text-align: right;
+}
+
+.feedback-success-note {
+  margin: 0.7rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
 .report-link {
   margin-top: 0.8rem;
   font-size: 0.95rem;
@@ -216,6 +334,20 @@ html[data-theme="dark"] .feedback-row textarea {
 
 .report-link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 780px) {
+  .feedback-field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feedback-actions {
+    justify-content: stretch;
+  }
+
+  .feedback-actions button {
+    width: 100%;
+  }
 }
 
 .report-toggle {
@@ -427,6 +559,7 @@ html[data-theme="dark"] .search-toolbar {
   justify-content: flex-end;
   gap: 0.75rem;
   flex-wrap: wrap;
+  margin-top: 0.85rem;
 }
 
 .station-meta {
@@ -453,6 +586,10 @@ html[data-theme="dark"] .search-toolbar {
   color: var(--pso-blue);
   box-shadow: 0 10px 24px rgba(0, 87, 168, 0.08);
   flex-shrink: 0;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .station-card .station-meta .nav-button:hover {
@@ -483,6 +620,7 @@ html[data-theme="dark"] .station-card .station-meta .nav-button:hover {
   color: var(--pso-white);
   border: 1px solid rgba(255, 255, 255, 0.28);
   box-shadow: 0 10px 24px rgba(0, 87, 168, 0.16);
+  font-weight: 700;
 }
 
 .station-view-button:hover {

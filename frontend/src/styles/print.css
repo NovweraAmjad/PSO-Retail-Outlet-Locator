@@ -33,17 +33,18 @@
     gap: 12px;
   }
 
-  .print-brand-mark {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: #0057a8;
-    color: white;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    letter-spacing: 0.04em;
+  .print-logo {
+    width: 72px;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .print-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
   }
 
   .print-header h1 {

@@ -48,22 +48,50 @@ const translations = {
     reportIssue: "Report an Issue",
     reportThisStation: "Report this station",
     feedbackHeading: "Report an Issue",
-    feedbackIntro: "Submit a correction for station details or missing outlets.",
+    feedbackIntro: "Share a correction or concern about a station, outlet, or map data.",
     feedbackClose: "Close",
-    feedbackStationLabel: "Station Name",
-    feedbackStationPlaceholder: "Enter station name or leave blank",
+    feedbackStationLabel: "Outlet Name",
+    feedbackStationPlaceholder: "Enter the outlet name",
+    feedbackLocationLabel: "Outlet Location",
+    feedbackLocationPlaceholder: "City, district, or address",
     feedbackIssueTypeLabel: "Issue Type",
-    feedbackTypeWrong: "Wrong Details",
-    feedbackTypeMissing: "Missing Outlet",
-    feedbackMessageLabel: "Details",
-    feedbackMessagePlaceholder: "Describe the problem or correction",
-    feedbackContactLabel: "Your Email or Phone (optional)",
+    feedbackTypeIncorrectDetails: "Incorrect Outlet Details",
+    feedbackTypeIncorrectLocation: "Incorrect Location",
+    feedbackTypeIncorrectCardStatus: "Incorrect Card Status",
+    feedbackTypeMissingFacility: "Missing Facility",
+    feedbackTypeClosedUnavailable: "Closed / Unavailable Outlet",
+    feedbackTypeIncorrectStoreOctane: "Incorrect Store / Octane Information",
+    feedbackTypeMapIssue: "Map Issue",
+    feedbackTypeOther: "Other",
+    feedbackMessageLabel: "Description",
+    feedbackMessagePlaceholder: "Describe the issue clearly so it can be reviewed later",
+    feedbackContactLabel: "Contact Information (optional)",
     feedbackContactPlaceholder: "Email or phone",
-    feedbackSubmit: "Send Feedback",
-    feedbackSubmitting: "Sending...",
-    feedbackSuccess: "Thank you! Your feedback has been sent.",
-    feedbackError: "Unable to send feedback. Please try again later.",
+    feedbackSubmit: "Submit Report",
+    feedbackSubmitting: "Submitting...",
+    feedbackSuccess: "Report prepared successfully. It is ready for future company review.",
+    feedbackError: "Unable to prepare the report. Please try again later.",
     feedbackValidation: "Please add a description of the issue.",
+    feedbackReadyTitle: "Prepared for future integration",
+    feedbackReadyText: "This form is designed so a company-approved workflow can connect it later to email, a database, or a ticketing system.",
+    feedbackReadyItemOne: "Structured issue categories for faster triage",
+    feedbackReadyItemTwo: "Clear outlet and location details for review",
+    feedbackReadyItemThree: "Contact details and notes ready for downstream handling",
+    feedbackPanelTitle: "Issue Report Form",
+    feedbackPanelSubtitle: "Capture the details below and keep the report ready for official follow-up.",
+    feedbackNoteTitle: "Submission status",
+    feedbackNoteText: "No external service is connected yet. Your report is being prepared locally for future company integration.",
+    feedbackSuccessTitle: "Report ready for review",
+    feedbackSuccessText: "This submission is prepared locally and can be forwarded to the approved company channel later.",
+    feedbackSummaryOutlet: "Outlet",
+    feedbackSummaryLocation: "Location",
+    feedbackSummaryIssue: "Issue",
+    feedbackSummaryContact: "Contact",
+    feedbackSummaryReference: "Reference",
+    feedbackFallbackStation: "Not provided",
+    feedbackFallbackLocation: "Not provided",
+    feedbackFallbackContact: "Not provided",
+    feedbackFallbackReference: "Not provided",
   },
   ur: {
     heroTitle: "اپنے قریب ترین پی ایس او اسٹیشن تلاش کریں",
@@ -107,22 +135,50 @@ const translations = {
     reportIssue: "مسئلہ رپورٹ کریں",
     reportThisStation: "اسٹیشن رپورٹ کریں",
     feedbackHeading: "مسئلہ رپورٹ کریں",
-    feedbackIntro: "اسٹیشن کی تفصیلات یا غائب آؤٹ لیٹ کے لئے اصلاح جمع کریں۔",
+    feedbackIntro: "اسٹیشن، آؤٹ لیٹ یا نقشہ کی معلومات کے بارے میں اصلاح یا تشویش شیئر کریں۔",
     feedbackClose: "بند کریں",
-    feedbackStationLabel: "اسٹیشن کا نام",
-    feedbackStationPlaceholder: "اسٹیشن کا نام درج کریں یا خالی چھوڑ دیں",
+    feedbackStationLabel: "آؤٹ لیٹ کا نام",
+    feedbackStationPlaceholder: "آؤٹ لیٹ کا نام درج کریں",
+    feedbackLocationLabel: "آؤٹ لیٹ کا مقام",
+    feedbackLocationPlaceholder: "شہر، ضلع یا پتہ",
     feedbackIssueTypeLabel: "مسئلے کی قسم",
-    feedbackTypeWrong: "غلط تفصیلات",
-    feedbackTypeMissing: "غائب آؤٹ لیٹ",
-    feedbackMessageLabel: "تفصیلات",
-    feedbackMessagePlaceholder: "مسئلہ یا اصلاح بیان کریں",
-    feedbackContactLabel: "آپ کا ای میل یا فون (اختیاری)",
+    feedbackTypeIncorrectDetails: "غلط آؤٹ لیٹ تفصیلات",
+    feedbackTypeIncorrectLocation: "غلط مقام",
+    feedbackTypeIncorrectCardStatus: "غلط کارڈ سٹیٹس",
+    feedbackTypeMissingFacility: "غائب سہولت",
+    feedbackTypeClosedUnavailable: "بند / دستیاب نہیں آؤٹ لیٹ",
+    feedbackTypeIncorrectStoreOctane: "غلط اسٹور / اوکٹین معلومات",
+    feedbackTypeMapIssue: "نقشہ مسئلہ",
+    feedbackTypeOther: "دیگر",
+    feedbackMessageLabel: "تفصیل",
+    feedbackMessagePlaceholder: "مسئلہ واضح طور پر بیان کریں تاکہ بعد میں جائزہ لیا جا سکے",
+    feedbackContactLabel: "رابطہ معلومات (اختیاری)",
     feedbackContactPlaceholder: "ای میل یا فون",
-    feedbackSubmit: "رائے بھیجیں",
-    feedbackSubmitting: "بھیج رہا ہے...",
-    feedbackSuccess: "شکریہ! آپ کی رائے بھیج دی گئی ہے۔",
-    feedbackError: "رائے بھیجنے میں ناکامی۔ براہ کرم بعد میں دوبارہ کوشش کریں۔",
+    feedbackSubmit: "رپورٹ جمع کریں",
+    feedbackSubmitting: "جمع ہو رہا ہے...",
+    feedbackSuccess: "رپورٹ کامیابی سے تیار ہو گیا۔ اسے مستقبل میں کمپنی کی جائزہ کاری کے لیے تیار رکھا گیا ہے۔",
+    feedbackError: "رپورٹ تیار کرنے میں ناکامی۔ براہ کرم بعد میں دوبارہ کوشش کریں۔",
     feedbackValidation: "براہ کرم مسئلے کی تفصیل شامل کریں۔",
+    feedbackReadyTitle: "مستقبل کی انٹیگریشن کے لیے تیار",
+    feedbackReadyText: "یہ فارم اس طرح ڈیزائن کیا گیا ہے کہ کمپنی کی منظوری والے Waa workflow سے بعد میں ای میل، ڈیٹا بیس یا ٹکٹنگ سسٹم سے جوڑا جا سکے۔",
+    feedbackReadyItemOne: "تیزی سے triage کے لیے منظم مسئلہ زمرے",
+    feedbackReadyItemTwo: "جائزہ کے لیے واضح آؤٹ لیٹ اور مقام کی تفصیلات",
+    feedbackReadyItemThree: "ذیلی ہینڈلنگ کے لیے رابطہ اور نوٹس تیار",
+    feedbackPanelTitle: "مسئلہ رپورٹ فارم",
+    feedbackPanelSubtitle: "ذیل کی تفصیلات درج کریں اور رپورٹ کو آفیشل پیروی کے لیے تیار رکھیں۔",
+    feedbackNoteTitle: "جمع کرانے کی حالت",
+    feedbackNoteText: "ابھی کوئی بیرونی سروس منسلک نہیں ہے۔ آپ کی رپورٹ مستقبل کی کمپنی انٹیگریشن کے لیے مقامی طور پر تیار کی جا رہی ہے۔",
+    feedbackSuccessTitle: "رپورٹ جائزہ کے لیے تیار",
+    feedbackSuccessText: "یہ جمع کرائی گئی معلومات مقامی طور پر تیار کی گئی ہے اور بعد میں منظوری یافتہ کمپنی چینل میں بھیجی جا سکتی ہے۔",
+    feedbackSummaryOutlet: "آؤٹ لیٹ",
+    feedbackSummaryLocation: "مقام",
+    feedbackSummaryIssue: "مسئلہ",
+    feedbackSummaryContact: "رابطہ",
+    feedbackSummaryReference: "حوالہ",
+    feedbackFallbackStation: "دیا گیا نہیں",
+    feedbackFallbackLocation: "دیا گیا نہیں",
+    feedbackFallbackContact: "دیا گیا نہیں",
+    feedbackFallbackReference: "دیا گیا نہیں",
   },
 };
 
@@ -192,15 +248,53 @@ function App() {
         whiteSpace: "nowrap",
       };
 
-  const PROVINCES = [
-    "Azad Jammu & Kashmir",
-    "Balochistan",
-    "Gilgit-Baltistan",
-    "Islamabad Capital Territory",
-    "Khyber Pakhtunkhwa",
-    "Punjab",
-    "Sindh",
-  ];
+  const normalizeOptionText = (value) => (value || "").toString().trim().toLowerCase();
+
+  const provinceOptions = useMemo(() => {
+    const set = new Set();
+    stations.forEach((station) => {
+      if (station.province && station.province.toString().trim()) {
+        set.add(station.province.toString().trim());
+      }
+    });
+    return [...set].sort((a, b) => a.localeCompare(b));
+  }, [stations]);
+
+  const divisionOptions = useMemo(() => {
+    const set = new Set();
+    stations.forEach((station) => {
+      if (!station.pso_division) return;
+      if (provinceFilter && normalizeOptionText(station.province) !== normalizeOptionText(provinceFilter)) return;
+      if (zoneFilter && normalizeOptionText(station.zone) !== normalizeOptionText(zoneFilter)) return;
+      set.add(station.pso_division);
+    });
+    return [...set].sort((a, b) => a.localeCompare(b));
+  }, [stations, provinceFilter, zoneFilter]);
+
+  const districtOptions = useMemo(() => {
+    const set = new Set();
+    stations.forEach((station) => {
+      if (!station.district) return;
+      if (provinceFilter && normalizeOptionText(station.province) !== normalizeOptionText(provinceFilter)) return;
+      if (zoneFilter && normalizeOptionText(station.zone) !== normalizeOptionText(zoneFilter)) return;
+      if (divisionFilter && normalizeOptionText(station.pso_division) !== normalizeOptionText(divisionFilter)) return;
+      set.add(station.district);
+    });
+    return [...set].sort((a, b) => a.localeCompare(b));
+  }, [stations, provinceFilter, zoneFilter, divisionFilter]);
+
+  const cityOptions = useMemo(() => {
+    const set = new Set();
+    stations.forEach((station) => {
+      if (!station.city) return;
+      if (provinceFilter && normalizeOptionText(station.province) !== normalizeOptionText(provinceFilter)) return;
+      if (zoneFilter && normalizeOptionText(station.zone) !== normalizeOptionText(zoneFilter)) return;
+      if (divisionFilter && normalizeOptionText(station.pso_division) !== normalizeOptionText(divisionFilter)) return;
+      if (districtFilter && normalizeOptionText(station.district) !== normalizeOptionText(districtFilter)) return;
+      set.add(station.city);
+    });
+    return [...set].sort((a, b) => a.localeCompare(b));
+  }, [stations, provinceFilter, zoneFilter, divisionFilter, districtFilter]);
 
   const ZONES = ["Central", "North", "South"];
 
@@ -215,6 +309,20 @@ function App() {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem("pso-theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    if (!provinceFilter) {
+      return;
+    }
+
+    const validDivision = !divisionFilter || divisionOptions.some((option) => normalizeOptionText(option) === normalizeOptionText(divisionFilter));
+    const validDistrict = !districtFilter || districtOptions.some((option) => normalizeOptionText(option) === normalizeOptionText(districtFilter));
+    const validCity = !cityFilter || cityOptions.some((option) => normalizeOptionText(option) === normalizeOptionText(cityFilter));
+
+    if (!validDivision) setDivisionFilter("");
+    if (!validDistrict) setDistrictFilter("");
+    if (!validCity) setCityFilter("");
+  }, [provinceFilter, divisionFilter, districtFilter, cityFilter, divisionOptions, districtOptions, cityOptions]);
 
   const fetchStations = async () => {
     setIsLoading(true);
@@ -257,8 +365,6 @@ function App() {
     navigate(`/feedback?station_id=${station.id}&station_name=${encodeURIComponent(station.name_of_outlets || '')}`);
   };
 
-  const normalizeOptionText = (value) => (value || "").toString().trim().toLowerCase();
-
   const computeDistanceKm = (lat1, lon1, lat2, lon2) => {
     const toRad = (degrees) => (degrees * Math.PI) / 180;
     const dLat = toRad(lat2 - lat1);
@@ -268,42 +374,6 @@ function App() {
     const a = Math.sin(dLat / 2) ** 2 + Math.cos(radLat1) * Math.cos(radLat2) * Math.sin(dLon / 2) ** 2;
     return 6371 * 2 * Math.asin(Math.sqrt(a));
   };
-
-  const divisionOptions = useMemo(() => {
-    const set = new Set();
-    stations.forEach((station) => {
-      if (!station.pso_division) return;
-      if (provinceFilter && normalizeOptionText(station.province) !== normalizeOptionText(provinceFilter)) return;
-      if (zoneFilter && normalizeOptionText(station.zone) !== normalizeOptionText(zoneFilter)) return;
-      set.add(station.pso_division);
-    });
-    return [...set].sort((a, b) => a.localeCompare(b));
-  }, [stations, provinceFilter, zoneFilter]);
-
-  const districtOptions = useMemo(() => {
-    const set = new Set();
-    stations.forEach((station) => {
-      if (!station.district) return;
-      if (provinceFilter && normalizeOptionText(station.province) !== normalizeOptionText(provinceFilter)) return;
-      if (zoneFilter && normalizeOptionText(station.zone) !== normalizeOptionText(zoneFilter)) return;
-      if (divisionFilter && normalizeOptionText(station.pso_division) !== normalizeOptionText(divisionFilter)) return;
-      set.add(station.district);
-    });
-    return [...set].sort((a, b) => a.localeCompare(b));
-  }, [stations, provinceFilter, zoneFilter, divisionFilter]);
-
-  const cityOptions = useMemo(() => {
-    const set = new Set();
-    stations.forEach((station) => {
-      if (!station.city) return;
-      if (provinceFilter && normalizeOptionText(station.province) !== normalizeOptionText(provinceFilter)) return;
-      if (zoneFilter && normalizeOptionText(station.zone) !== normalizeOptionText(zoneFilter)) return;
-      if (divisionFilter && normalizeOptionText(station.pso_division) !== normalizeOptionText(divisionFilter)) return;
-      if (districtFilter && normalizeOptionText(station.district) !== normalizeOptionText(districtFilter)) return;
-      set.add(station.city);
-    });
-    return [...set].sort((a, b) => a.localeCompare(b));
-  }, [stations, provinceFilter, zoneFilter, divisionFilter, districtFilter]);
 
   const allianceOptions = useMemo(() => {
     const set = new Set();
@@ -521,6 +591,13 @@ function App() {
     if (normalized === "Y") return "Available";
     if (normalized === "N") return "Not Available";
     return value;
+  };
+
+  const handleStationNavigation = (station) => {
+    if (station.latitude != null && station.longitude != null) {
+      const url = `https://www.google.com/maps/search/?api=1&query=${station.latitude},${station.longitude}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
   };
 
   const formatStationAddress = (station) => {
@@ -892,9 +969,18 @@ function App() {
             <div className="filter-row">
               <div className="filter-field">
                 <label>Province</label>
-                <select value={provinceFilter} onChange={(e) => setProvinceFilter(e.target.value)}>
+                <select
+                  value={provinceFilter}
+                  onChange={(e) => {
+                    const nextProvince = e.target.value;
+                    setProvinceFilter(nextProvince);
+                    setDivisionFilter("");
+                    setDistrictFilter("");
+                    setCityFilter("");
+                  }}
+                >
                   <option value="">All Provinces</option>
-                  {PROVINCES.map((province) => (
+                  {provinceOptions.map((province) => (
                     <option key={province} value={province}>{province}</option>
                   ))}
                 </select>
@@ -1032,9 +1118,14 @@ function App() {
                       <div>{station.city}, {station.district}</div>
                       <div>{text.status}: {station.pso_cards_enabled?.toUpperCase() === "Y" ? text.cardEnabled : text.cardDisabled}</div>
                       <div>{text.distance}: {station.distance_km} km</div>
-                      <button className="secondary-button station-view-button" type="button" onClick={() => toggleStationView(station.id)}>
-                        {openStationId === station.id ? text.hide : text.view}
-                      </button>
+                      <div className="station-card-actions">
+                        <button className="secondary-button station-view-button" type="button" onClick={() => toggleStationView(station.id)}>
+                          {openStationId === station.id ? text.hide : text.view}
+                        </button>
+                        <button className="secondary-button nav-button" type="button" style={navButtonStyle} onClick={() => handleStationNavigation(station)}>
+                          Navigate
+                        </button>
+                      </div>
                       {openStationId === station.id && (
                         <div className="station-view-panel">
                           <h4>{text.stationFacilities}</h4>
@@ -1086,12 +1177,7 @@ function App() {
                       <div className="station-meta">
                         <span className="station-city">{station.city || ''}</span>
                         {station.distance_km != null && <span className="station-distance">{text.distance}: {station.distance_km} km</span>}
-                        <button className="secondary-button nav-button" type="button" style={navButtonStyle} onClick={() => {
-                          if (station.latitude != null && station.longitude != null) {
-                            const url = `https://www.google.com/maps/search/?api=1&query=${station.latitude},${station.longitude}`;
-                            window.open(url, '_blank');
-                          }
-                        }}>Navigate</button>
+                        <button className="secondary-button nav-button" type="button" style={navButtonStyle} onClick={() => handleStationNavigation(station)}>Navigate</button>
                       </div>
                       {openStationId === station.id && (
                         <div className="station-view-panel">
@@ -1177,8 +1263,12 @@ function App() {
       <div className="print-report" aria-hidden="true">
         <div className="print-header">
           <div className="print-brand">
-            <div className="print-brand-mark">PSO</div>
-            <div>
+            <img
+              className="print-logo"
+              src={`${apiUrl}/static/psologo.png`}
+              alt="PSO logo"
+            />
+            <div className="print-brand-text">
               <h1>PSO Station Report</h1>
               <p>Generated from the currently displayed results</p>
             </div>
